@@ -3,20 +3,20 @@ import mongoose from "mongoose";
 let isConnected = false; // to track the connection
 
 export const connectToDB = async () => {
-    mongoose.set('strictQuery',true);
+    mongoose.set('strictQuery', true);
 
-    if(isConnected){
+    if (isConnected) {
         console.log('MongoDB is already connected');
         return;
     }
 
-    try{
+    try {
         await mongoose.connect(process.env.MONGODB_URI, {
             dbName: 'share_prompt',
-        })
-        isConnected=true;
+        });
+        isConnected = true;
         console.log('MongoDB Connected');
-    }catch(error){
+    } catch (error) {
         console.log(error);
     }
-}
+};
