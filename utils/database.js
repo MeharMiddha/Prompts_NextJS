@@ -20,3 +20,4 @@ export const connectToDB = async () => {
         console.log(error);
     }
 };
+// this is my database file
